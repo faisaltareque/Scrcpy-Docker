@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  scrcpy:
+    build: .
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb:ro
+      - /tmp/.X11-unix:/tmp/.X11-unix:ro
+    environment:
+      DISPLAY: $DISPLAY
+    privileged: true
+    tty: true
